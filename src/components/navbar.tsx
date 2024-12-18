@@ -63,7 +63,7 @@ export function Navbar() {
           className="text-xl font-bold hover:text-primary transition-colors"
           onClick={(e) => handleClick(e, "#top")}
         >
-          Skyro
+          Michal Flaška
         </Link>
         
         {/* Desktop Navigation */}

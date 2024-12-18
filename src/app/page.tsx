@@ -11,60 +11,70 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { AspectRatio } from "@/components/ui/aspect-ratio"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
-import { Github, Mail, Twitter, Linkedin, ExternalLink, Code2, Brain, Contact, AlertCircle, Trophy, Briefcase, GraduationCap, Palette, Smartphone, Server, Database, HeadingIcon as HeadingQuestion } from 'lucide-react'
+import { Github, Mail, Twitter, Linkedin, ExternalLink, Code2, Brain, Contact, AlertCircle, Trophy, Briefcase, GraduationCap, Palette, Smartphone, Server, Database, HeadingIcon as HeadingQuestion, Joystick } from 'lucide-react'
 
 const skills = [
-  { name: "React", level: 90, category: "Frontend" },
-  { name: "Next.js", level: 85, category: "Frontend" },
-  { name: "TypeScript", level: 80, category: "Languages" },
-  { name: "Node.js", level: 75, category: "Backend" },
-  { name: "TailwindCSS", level: 95, category: "Frontend" },
-  { name: "PostgreSQL", level: 70, category: "Backend" },
-  { name: "Python", level: 65, category: "Languages" },
-  { name: "Docker", level: 60, category: "DevOps" },
+
+
+  { name: "React", level: 30, category: "Frontend" },
+  { name: "Next.js", level: 30, category: "Frontend" },
+  { name: "TailwindCSS", level: 60, category: "Frontend" },
+
+  { name: "NodeJS", level: 10, category: "Backend" },
+  { name: "MySQL", level: 5, category: "Backend" },
+
+  { name: "HTML", level: 90, category: "Languages" },
+  { name: "CSS", level: 80, category: "Languages" },
+  { name: "JavaScript", level: 20, category: "Languages" },
+  { name: "TypeScript", level: 30, category: "Languages" },
+
+  { name: "nmap", level: 20, category: "Other" },
+  { name: "Cheat Engine", level: 40, category: "Other" },
+  { name: "Hydra", level: 20, category: "Other" },
+  { name: "Flipper Zero Dev", level: 70, category: "Other" },
 ]
 
 const projects = [
   {
-    title: "Project 1",
+    title: "RedFox Studios",
     description: "A comprehensive web application built with Next.js and TypeScript",
-    tags: ["React", "Next.js", "TypeScript"],
-    link: "https://github.com/yourusername/project1",
+    tags: ["React", "Next.js", "TypeScript", "shadcn/ui", "Website"],
+    link: "https://redfox-studios.org",
     image: "/placeholder.svg?height=300&width=400",
   },
   {
-    title: "Project 2",
-    description: "Backend service built with Node.js and Express",
-    tags: ["Node.js", "Express", "MongoDB"],
-    link: "https://github.com/yourusername/project2",
+    title: "Discord Bot",
+    description: "Fully functional discord bot for a company",
+    tags: ["Node.js", "JavaScript", "Discord API", "Bot", "Commands"],
+    link: "https://github.com/RedFox-Studios/discord-bot",
     image: "/placeholder.svg?height=300&width=400",
   },
   {
-    title: "Project 3",
-    description: "Mobile application developed with React Native",
-    tags: ["React Native", "Firebase"],
-    link: "https://github.com/yourusername/project3",
+    title: "qop3 Autocompleter",
+    description: "VBS Application level autocomplete for game qop3",
+    tags: ["VBS", "Game", "Autocomplete"],
+    link: "https://github.com/RedFox-Studios/qop3-bot",
     image: "/placeholder.svg?height=300&width=400",
   },
 ]
 
 const testimonials = [
   {
-    name: "John Doe",
-    role: "CEO at TechCorp",
+    name: "Matyáš Hájek",
+    role: "Co-CEO at RedFox Studios",
     content: "Exceptional work and great attention to detail!",
     avatar: "/placeholder.svg?height=40&width=40",
   },
   {
-    name: "Jane Smith",
-    role: "Lead Developer",
+    name: "Kayley Hájek",
+    role: "Designer at RedFox Studios",
     content: "One of the most talented developers I've worked with.",
     avatar: "/placeholder.svg?height=40&width=40",
   },
   {
-    name: "Alex Johnson",
-    role: "Product Manager",
-    content: "Delivers high-quality work consistently.",
+    name: "Martin Weiss",
+    role: "Investor",
+    content: "amazing, high quality and fast work. A pleasure to work with",
     avatar: "/placeholder.svg?height=40&width=40",
   },
 ]
@@ -81,31 +91,38 @@ export default function Home() {
                 Welcome to my portfolio
               </h1>
               <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-                Full Stack Developer & UI/UX Designer
+                Front End Developer & UI/UX Designer
               </p>
             </div>
-            <div className="space-x-4">
-              <Button asChild size="lg">
-                <a href="#contact">
+            <div className="flex space-x-4">
+              <Button size="lg" className="inline-flex items-center" asChild>
+                <a href="#contact" className="inline-flex items-center">
                   <Mail className="mr-2 h-4 w-4" />
                   Contact Me
                 </a>
               </Button>
-              <Button variant="outline" size="lg" asChild>
-                <a href="#projects">View Projects</a>
+              <Button variant="outline" size="lg" className="inline-flex items-center" asChild>
+                <a href="#projects" className="inline-flex items-center">
+                  View Projects
+                </a>
               </Button>
             </div>
             <div className="flex space-x-4">
               <TooltipProvider>
                 {[
-                  { href: "https://github.com/yourusername", icon: Github, label: "GitHub" },
-                  { href: "https://linkedin.com/in/yourusername", icon: Linkedin, label: "LinkedIn" },
-                  { href: "https://twitter.com/yourusername", icon: Twitter, label: "Twitter" },
+                  { href: "https://github.com/pilot2254", icon: Github, label: "GitHub" },
+                  { href: "https://linkedin.com/in/pilot2254", icon: Linkedin, label: "LinkedIn" },
+                  { href: "https://twitter.com/pilot2254", icon: Twitter, label: "Twitter" },
                 ].map((social) => (
                   <Tooltip key={social.label}>
                     <TooltipTrigger asChild>
-                      <Button variant="ghost" size="icon" asChild>
-                        <a href={social.href} target="_blank" rel="noopener noreferrer">
+                      <Button variant="ghost" size="icon" className="h-10 w-10" asChild>
+                        <a 
+                          href={social.href} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center justify-center"
+                        >
                           <social.icon className="h-5 w-5" />
                         </a>
                       </Button>
@@ -159,21 +176,43 @@ export default function Home() {
                           {[
                             {
                               title: "Senior Developer",
-                              company: "TechCorp",
+                              company: "RedFox Studios",
                               period: "2021 - Present",
                               description: [
-                                "Led development of multiple full-stack applications",
+                                "Led development of multiple Projects",
                                 "Mentored junior developers",
+                                "Built a complete website using Next.js, shadcn/ui and React",
+                                "4x Top Employee of the Year",
                                 "Implemented CI/CD pipelines",
                               ],
                             },
                             {
-                              title: "Full Stack Developer",
-                              company: "StartupX",
-                              period: "2019 - 2021",
+                              title: "Front-End Developer",
+                              company: "Flegy.sk",
+                              period: "2024",
                               description: [
-                                "Developed and maintained various web applications",
-                                "Worked with React, Node.js, and PostgreSQL",
+                                "Developed a Beautifully looking portfolio",
+                                "Worked with TailwindCSS, HTML, CSS, SCSS, PHP, JS & jsdelivr",
+                                "Significantly improved visuals of the website",
+                              ],
+                            },
+                            {
+                              title: "Discord Server Manager",
+                              company: "Retry Games",
+                              period: "2024 - 2025",
+                              description: [
+                                "Successfully created and managed a discord server for Retry Games. And helped make the community better",
+                                "Worked with Regexes, Discord API, And Discord Bots",
+                                "Improved User satisfaction metrics by 30%",
+                              ],
+                            },
+                            {
+                              title: "Front-End Helper",
+                              company: "Moonforge Studios",
+                              period: "2024 - 2025",
+                              description: [
+                                "Helped install Next.js, Shadcn/ui and assisted with web development",
+                                "Worked with React, Node.js, Shadcn/ui and Git",
                                 "Improved application performance by 40%",
                               ],
                             },
@@ -208,13 +247,28 @@ export default function Home() {
                         <div className="space-y-8">
                           {[
                             {
-                              title: "BSc in Computer Science",
-                              institution: "University of Technology",
-                              period: "2015 - 2019",
+                              title: "ZŠ Železničná in Bratislava - Slovakia",
+                              institution: "Elementary School",
+                              period: "2015 - 2024",
+                            },
+                            {
+                              title: "Algorithmics Academy",
+                              institution: "IT Technology Course",
+                              period: "2022 - 2023",
+                            },
+                            {
+                              title: "Skyro Academy",
+                              institution: "IT Technology Camp",
+                              period: "2023 - 2024",
+                            },
+                            {
+                              title: "Skyro.ai",
+                              institution: "High School",
+                              period: "2024 - Present",
                             },
                             {
                               title: "Various Certifications",
-                              description: ["AWS Certified Developer", "Google Cloud Professional"],
+                              description: ["Algorithmics Academy Certificate", "Skyro Academy", "Best Portfolio 2024 Awards Winner - Hobbyist Category", "Gamejam 2024 - Participant", "ArcadeWatch Gamejam 2024 - Participant"],
                             },
                           ].map((edu, index) => (
                             <div key={index} className="relative pl-6 border-l">
@@ -250,14 +304,24 @@ export default function Home() {
                         <div className="space-y-8">
                           {[
                             {
-                              title: "Employee of the Year",
-                              company: "TechCorp",
+                              title: "Best Website Design",
+                              company: "Algorithmics Academy",
                               year: 2022,
                             },
                             {
-                              title: "Top Performer Award",
-                              company: "StartupX",
-                              year: 2020,
+                              title: "2x Top Project",
+                              company: "Skyro Academy",
+                              year: "2023, 2024",
+                            },
+                            {
+                              title: "4x Employee of the Year",
+                              company: "RedFox Studios",
+                              year: "2021, 2022, 2023, 2024",
+                            },
+                            {
+                              title: "Best Portfolio 2024 Awards - Hobbyist Category",
+                              company: "N/A",
+                              year: 2024,
                             },
                           ].map((ach, index) => (
                             <div key={index} className="relative pl-6 border-l">
@@ -279,6 +343,53 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Services Section */}
+      <section id="services" className="py-12 md:py-16">
+        <div className="container px-4 md:px-6">
+          <div className="flex flex-col items-center gap-4">
+            <div className="text-center space-y-2">
+              <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl">Services</h2>
+              <p className="text-muted-foreground">
+                Specialized solutions I offer
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full mt-6">
+              {[
+                {
+                  title: "Web Development",
+                  description: "Building responsive and performant web applications",
+                  icon: Code2,
+                },
+                {
+                  title: "Game Development",
+                  description: "Creating cross-platform games in Unreal Engine and Unity",
+                  icon: Joystick,
+                },
+                {
+                  title: "Discord Server Building",
+                  description: "Building a powerful and comfortable Discord Servers",
+                  icon: Server,
+                },
+              ].map((service, index) => (
+                <Card key={index} className="flex flex-col">
+                  <CardHeader className="p-4">
+                    <div className="flex items-center gap-2">
+                      <div className="p-2 rounded-md bg-primary/10">
+                        <service.icon className="h-5 w-5" />
+                      </div>
+                      <CardTitle className="text-lg">{service.title}</CardTitle>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="p-4 pt-0">
+                    <p className="text-sm text-muted-foreground">{service.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Skills Section */}
       <section id="skills" className="py-16 lg:py-20">
         <div className="container px-4 md:px-6">
@@ -292,13 +403,13 @@ export default function Home() {
             <div className="w-full max-w-4xl mt-8">
               <Tabs defaultValue="Frontend" className="w-full">
                 <TabsList className="grid w-full grid-cols-4">
-                  {["Frontend", "Backend", "Languages", "DevOps"].map((category) => (
+                  {["Frontend", "Backend", "Languages", "Other"].map((category) => (
                     <TabsTrigger key={category} value={category}>
                       {category}
                     </TabsTrigger>
                   ))}
                 </TabsList>
-                {["Frontend", "Backend", "Languages", "DevOps"].map((category) => (
+                {["Frontend", "Backend", "Languages", "Other"].map((category) => (
                   <TabsContent key={category} value={category}>
                     <Card>
                       <CardHeader>
@@ -461,19 +572,19 @@ export default function Home() {
                 </Alert>
                 <div className="grid gap-4">
                   <Button className="w-full" asChild>
-                    <a href="mailto:your.email@example.com">
+                    <a href="mailto:michal.flaska@redfox-studios.org">
                       <Mail className="mr-2 h-4 w-4" />
                       Send Email
                     </a>
                   </Button>
                   <Button variant="outline" className="w-full" asChild>
-                    <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
+                    <a href="https://linkedin.com/in/pilot2254" target="_blank" rel="noopener noreferrer">
                       <Linkedin className="mr-2 h-4 w-4" />
                       Connect on LinkedIn
                     </a>
                   </Button>
                   <Button variant="outline" className="w-full" asChild>
-                    <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+                    <a href="https://github.com/pilot2254" target="_blank" rel="noopener noreferrer">
                       <Github className="mr-2 h-4 w-4" />
                       Follow on GitHub
                     </a>
@@ -512,8 +623,8 @@ export default function Home() {
           <div className="flex gap-4">
             <TooltipProvider>
               {[
-                { href: "https://github.com/yourusername", icon: Github, label: "GitHub" },
-                { href: "https://twitter.com/yourusername", icon: Twitter, label: "Twitter" },
+                { href: "https://github.com/pilot2254", icon: Github, label: "GitHub" },
+                { href: "https://twitter.com/pilot2254", icon: Twitter, label: "Twitter" },
               ].map((social) => (
                 <Tooltip key={social.label}>
                   <TooltipTrigger asChild>

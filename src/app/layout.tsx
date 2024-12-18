@@ -7,8 +7,28 @@ import { Navbar } from "@/components/navbar"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Skyro Portfolio",
-  description: "Personal portfolio website built with Next.js and Shadcn UI",
+  title: "Michal Flaška Portfolio | Full Stack Developer & UI/UX Designer",
+  description: "Professional portfolio of Michal Flaška, showcasing web development, mobile applications, and UI/UX design projects.",
+  keywords: ["web development", "full stack developer", "UI/UX design", "React", "Next.js", "TypeScript"],
+  authors: [{ name: "Michal Flaška" }],
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://redfox-studios.org/pilot2254",
+    title: "Michal Flaška Portfolio | Full Stack Developer & UI/UX Designer",
+    description: "Professional portfolio of Michal Flaška, showcasing web development, mobile applications, and UI/UX design projects.",
+    siteName: "Michal Flaška Portfolio",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Michal Flaška Portfolio | Full Stack Developer & UI/UX Designer",
+    description: "Professional portfolio of Michal Flaška, showcasing web development, mobile applications, and UI/UX design projects.",
+    creator: "@pilot2254",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 export default function RootLayout({
