@@ -2,7 +2,8 @@
 
 A sleek, responsive portfolio website built with Next.js 14, Tailwind CSS, and shadcn/ui components. Features a modern design with dark mode support, smooth scrolling, and optimized performance.
 
-![Portfolio Preview](/public/screenshot.png)
+![Portfolio Preview](/public/screenshot1.png)
+![Portfolio Preview2](/public/screenshot2.png)
 
 ## ✨ Features
 
