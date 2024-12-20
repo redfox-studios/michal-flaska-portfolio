@@ -74,7 +74,25 @@ const testimonials = [
   {
     name: "Martin Weiss",
     role: "Investor",
-    content: "amazing, high quality and fast work. A pleasure to work with",
+    content: "Amazing, high quality and fast work. A pleasure to work with.",
+    avatar: "/placeholder.svg?height=40&width=40",
+  },
+  {
+    name: "Richard Bačko",
+    role: "Co Worker",
+    content: "Very good man to work with.",
+    avatar: "/placeholder.svg?height=40&width=40",
+  },
+  {
+    name: "Maximilián Repa",
+    role: "Co Worker",
+    content: "Helped us with music at gamejam 2024.",
+    avatar: "/placeholder.svg?height=40&width=40",
+  },
+  {
+    name: "Martin Paluš",
+    role: "Co Worker",
+    content: "Did a realy good work!",
     avatar: "/placeholder.svg?height=40&width=40",
   },
 ]
